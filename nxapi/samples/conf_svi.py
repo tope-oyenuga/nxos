@@ -1,19 +1,19 @@
 import requests
 import json
 
-print "enter ip address of switch"
-ip=raw_input()
+print ("enter ip address of switch")
+ip = input ()
 
-print "enter vlan for which svi has to be configured"
-vlanId=raw_input()
+print ("enter vlan for which svi has to be configured")
+vlanId = input ()
 
-print "enter ip of the svi"
-ip_vlanId = raw_input()
+print ("enter ip of the svi")
+ip_vlanId = input()
 
 myheaders = {'content-type': 'application/json-rpc'}
-url = "http://"+ip+"/ins"
-username = "admin"
-password = "ciscotme"
+url = ("http://"+ip+"/ins")
+username = ("admin")
+password = ("Cisco321")
 
 payload=[
    {"jsonrpc": "2.0","method": "cli","params": {"cmd": "conf t","version": 1},"id": 1},
@@ -24,6 +24,3 @@ payload=[
 ]
 
 response = requests.post(url,data=json.dumps(payload), headers=myheaders,auth=(username,password)).json()
-
-
-

@@ -1,16 +1,16 @@
 import requests
 import json
 
-print "enter ip address"
-ip=raw_input()
+print ("enter ip address of switch")
+ip=input()
 
-print "enter vlan to be configured"
-vlanId=raw_input()
+print ("enter vlan to be configured")
+vlanId=input()
 
 myheaders = {'content-type': 'application/json-rpc'}
 url = "http://"+ip+"/ins"
 username = "admin"
-password = "ciscotme"
+password = "Cisco321"
 
 
 payload=[
@@ -20,6 +20,3 @@ payload=[
 ]
 
 response = requests.post(url,data=json.dumps(payload), headers=myheaders,auth=(username,password)).json()
-
-
-
